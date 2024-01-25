@@ -1,5 +1,5 @@
 import Pengaduan from "../models/PengaduanModel.js";
-import moment from 'moment-timezone';
+import moment from "moment";
 
 export const getPengaduan = async (req, res) => {
     try {
@@ -13,14 +13,13 @@ export const getPengaduan = async (req, res) => {
 export const createPengaduan = async (req, res) => {
     const { idPelanggan, nama, noTelepon, alamat, tanggal, sumberPengaduan, pengaduanMelalui, isiPengaduan } = req.body;
     try {
-        const formattedDate = moment(tanggal, 'MM/DD/YYYY').format('MM/DD/YYYY');
 
         await Pengaduan.create({
             idPelanggan: idPelanggan,
             nama: nama,
             noTelepon: noTelepon,
             alamat: alamat,
-            tanggal: formattedDate,
+            tanggal: tanggal,
             sumberPengaduan: sumberPengaduan,
             pengaduanMelalui: pengaduanMelalui,
             isiPengaduan: isiPengaduan,

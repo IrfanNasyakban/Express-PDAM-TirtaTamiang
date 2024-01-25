@@ -5,9 +5,7 @@ const { DataTypes } = Sequelize;
 
 const Pengaduan = db.define('pengaduan', {
     idPelanggan: {
-        primaryKey: true,
         type: DataTypes.INTEGER,
-        autoIncrement: false
     },
     nama: {
         type: DataTypes.STRING
